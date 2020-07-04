@@ -16,7 +16,7 @@ public class Author {
 	private String lastname;
 	
 	@ManyToMany(mappedBy = "authors")
-	private Set<Book> books;
+	private Set<Book> books; 
 	
 	public Author(String firstName, String lastname, Set<Book> books) {
 		this.firstName = firstName;
@@ -55,5 +55,24 @@ public class Author {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if(obj == null || getClass() != obj.getClass()) return false;
+		
+		Author author = (Author) obj;
+		
+		return id != null ? id.equals(author.id) : author.id == null;
+	}
+
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", firstName=" + firstName + ", lastname=" + lastname + ", books=" + books + "]";
+	}
 }

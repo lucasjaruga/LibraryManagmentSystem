@@ -49,5 +49,25 @@ public class Book {
 	public void setAuthor(Author author) {
 		this.authors.add(author);
 	}
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if(obj == null || getClass() != obj.getClass()) return false;
+		
+		Book book = (Book) obj;
+		
+		return id != null ? id.equals(book.id) : book.id == null;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title + ", authors=" + authors + "]";
+	}
 	
 }
