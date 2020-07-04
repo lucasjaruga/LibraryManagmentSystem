@@ -16,12 +16,11 @@ public class Author {
 	private String lastname;
 	
 	@ManyToMany(mappedBy = "authors")
-	private Set<Book> books; 
+	private Set<Book> books = new HashSet<>(); 
 	
-	public Author(String firstName, String lastname, Set<Book> books) {
+	public Author(String firstName, String lastname) {
 		this.firstName = firstName;
 		this.lastname = lastname;
-		this.books = books;
 	}
 
 	public String getFirstName() {

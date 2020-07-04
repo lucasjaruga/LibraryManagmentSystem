@@ -10,27 +10,26 @@ public class Book {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private Integer id; // klucz główny (primary key)
+	private Long id; // klucz główny (primary key)
 	
-	private Integer isbn;
+	private String isbn;
 	private String title;
 	
 	@ManyToMany
 	@JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
 			inverseJoinColumns = @JoinColumn(name = "author_id"))
-	private Set<Author> authors;
+	private Set<Author> authors = new HashSet<>();
 	
-	public Book(Integer isbn, String title, Set<Author> authors) {
+	public Book(String title, String isbn) {
 		this.isbn = isbn;
 		this.title = title;
-		this.authors = authors;
 	}
 
-	public Integer getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(Integer isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
