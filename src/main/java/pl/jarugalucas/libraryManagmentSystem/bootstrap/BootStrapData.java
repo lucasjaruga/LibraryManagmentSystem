@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import pl.jarugalucas.libraryManagmentSystem.model.Author;
 import pl.jarugalucas.libraryManagmentSystem.model.Book;
+import pl.jarugalucas.libraryManagmentSystem.model.Publisher;
 import pl.jarugalucas.libraryManagmentSystem.repositories.AuthorRepository;
 import pl.jarugalucas.libraryManagmentSystem.repositories.BookRepository;
 
@@ -39,6 +40,13 @@ public class BootStrapData implements CommandLineRunner {
 		// saving into database
 		authorRepository.save(herbert);
 		bookRepository.save(jtcr);
+		
+		// --------------------------------------------------------------------
+		
+		Publisher helion = new Publisher("Helion", "ul. Kościuszki 1c", "Gliwice", "Mazowieckie", "44-100");
+		
+		
+		
 		
 		System.out.println("Started in Bootstrap");
 		System.out.println("Number of Books: " + bookRepository.count());

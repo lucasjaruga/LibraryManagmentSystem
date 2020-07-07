@@ -1,8 +1,8 @@
 package pl.jarugalucas.libraryManagmentSystem.model;
 
-import javax.persistence.*;
-
 //this is POJO
+
+import javax.persistence.*;
 
 @Entity
 public class User {

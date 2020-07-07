@@ -1,6 +1,6 @@
 package pl.jarugalucas.libraryManagmentSystem.model;
 
-//this is POJO
+// this is POJO
 
 import java.util.*;
 import javax.persistence.*;
