@@ -23,6 +23,6 @@ public class BookController {
 		// adds all books to the model and next it'll return model to view layer
 		model.addAttribute("book", bookRepository.findAll());
 		
-		return "books";
+		return "books/list";
 	}
 }
