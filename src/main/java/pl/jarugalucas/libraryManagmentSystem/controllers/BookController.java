@@ -21,7 +21,7 @@ public class BookController {
 	public String getBooks(Model model) {
 		
 		// adds all books to the model and next it'll return model to view layer
-		model.addAttribute("book", bookRepository.findAll());
+		model.addAttribute("books", bookRepository.findAll());
 		
 		return "books/list";
 	}
