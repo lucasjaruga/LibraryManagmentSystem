@@ -13,14 +13,17 @@ public class Author {
 	private Integer id; // klucz główny (primary key)
 	
 	private String firstName;
-	private String lastname;
+	private String lastName;
 	
 	@ManyToMany(mappedBy = "authors")
 	private Set<Book> books = new HashSet<>(); 
 	
-	public Author(String firstName, String lastname) {
+	public Author() {
+	}
+	
+	public Author(String firstName, String lastName) {
 		this.firstName = firstName;
-		this.lastname = lastname;
+		this.lastName = lastName;
 	}
 
 	public String getFirstName() {
@@ -31,12 +34,12 @@ public class Author {
 		this.firstName = firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Set<Book> getBooks() {
@@ -72,6 +75,6 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", firstName=" + firstName + ", lastname=" + lastname + ", books=" + books + "]";
+		return "Author [id=" + id + ", firstName=" + firstName + ", lastname=" + lastName + "]";
 	}
 }
