@@ -1,9 +1,9 @@
 package pl.jarugalucas.libraryManagmentSystem.controllers;
 
+import pl.jarugalucas.libraryManagmentSystem.repositories.AuthorRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.jarugalucas.libraryManagmentSystem.repositories.AuthorRepository;
 
 @Controller
 public class AuthorController {
